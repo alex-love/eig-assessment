@@ -1,0 +1,16 @@
+.btn {
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  border: 1px solid gray;
+  background-color: lightgray;
+  width: 130px;
+  padding: 1em 0em;
+  p {
+    margin: 0;
+  }
+  &-blue {
+    background-color: rgba(7, 89, 197, 0.678);
+    color: #fff;
+  }
+}
