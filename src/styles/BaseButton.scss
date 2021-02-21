@@ -6,6 +6,12 @@
   background-color: lightgray;
   width: 130px;
   padding: 1em 0em;
+  cursor: pointer;
+  will-change: filter;
+  transition: filter ease .3s;
+  &:hover {
+    filter: brightness(120%);
+  }
   p {
     margin: 0;
   }

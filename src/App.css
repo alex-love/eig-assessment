@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-family: sans-serif;
+  width: 100%;
 }
 button {
   font-family: sans-serif;
@@ -23,6 +24,11 @@ button {
 
 .App-link {
   color: #61dafb;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 mb-2 {

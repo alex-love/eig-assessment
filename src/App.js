@@ -1,17 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react';
+import { Router } from "@reach/router"
 
 import StepHome from './components/StepHome';
+import StepSuccess from './components/StepSuccess';
 
 function App() {
+  const [step, updateStep] = useState(0);
 
-  const APP_STATE = [
-    { id: 0, value: "home" },
-    { id: 1, value: "uploaded" },
-    { id: 2, value: "contact" },
-    { id: 3, value: "tips" }
+  const APP_ROUTES = [
+    { path: '/', component: <StepHome/> },
+    { id: '/success', component: <StepSuccess/> },
+    { id: '/contact', component: <StepSuccess/> },
+    { id: '/tips', component: <StepSuccess/> }
   ];
+  
 
   const [appState, setAppState] = useState(0);
   return (
@@ -19,9 +23,12 @@ function App() {
       <header className="App-header">
         <img src={logo} className="logo" alt="logo" />
       </header>
-      <main className="wrapper">
-        <StepHome />
-      </main>
+        <main className="wrapper">
+          <Router>
+            <StepHome path="/" />
+            <StepSuccess path="/success" />
+          </Router>
+        </main>
     </div>
   );
 }
