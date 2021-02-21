@@ -16,7 +16,7 @@
     margin: 0;
   }
   &-blue {
-    background-color: rgba(7, 89, 197, 0.678);
+    background-color: var(--button-blue);
     color: #fff;
   }
 }

@@ -31,12 +31,12 @@ export default function StepHome(props) {
     <div>
       <BaseStep>
   <p> In order to most accurately process your recent claim (#{props.claimNumber}), we ask that you submit photos of the damage you reported. </p>
-      </BaseStep>
       <div className="buttons">
         <UploadButton className="mb-2" updateImages={handleFiles}/>
         {images.length > 0 && <Link to='/success'><SubmitButton disabled/></Link>}
         <ImagePreviews images={[1,2,3]} />
       </div>
+      </BaseStep>
     </div>
   )
 }
