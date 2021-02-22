@@ -19,7 +19,7 @@ export default function StepHome(props) {
       const reader = new FileReader();
       reader.onload = (e) => {
         console.log(e.target)
-        tmp.push({image: e.target.result, key: i, name: file.name})
+        tmp.push({image: e.target.result, key: i, name: truncate(file.name, 40)})
       }
       reader.readAsDataURL(file);
       reader.onloadend = (e) => {
@@ -27,6 +27,10 @@ export default function StepHome(props) {
       }
     }
   }
+
+  function truncate(str, n){
+    return (str.length > n) ? str.substr(0, n-1) + '...' : str;
+  };
 
   return (
     <div class="step-home">

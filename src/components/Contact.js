@@ -15,7 +15,7 @@ export default function Contact() {
         <a href="tel:+18002377796">1-800-237-7796</a>
         </div>
         <div className="upload">
-        <UploadButton />
+        <UploadButton isLink={true} />
         </div>
       </div>
     </div>
