@@ -19,27 +19,20 @@ export default function StepHome(props) {
       const reader = new FileReader();
       reader.onload = (e) => {
         console.log(e.target)
-        // updateImages([...images, {image: e.target.result, key: i}])
-        // let newImg = {image: e.target.result, key: i}
         tmp.push({image: e.target.result, key: i, name: file.name})
-        // addImage({image: e.target.result, key: i})
       }
       reader.readAsDataURL(file);
       reader.onloadend = (e) => {
         setImages([...images, ...tmp]); 
       }
     }
-    // updateImages(images => [...images, ...tmp])
-    //fix async thing?
-    setTimeout(() => {
-      // setImages([...images, ...tmp])
-    },150)
   }
 
   return (
-    <div>
+    <div class="step-home">
       <BaseStep>
-  <p> In order to most accurately process your recent claim (#{props.claimNumber}), we ask that you submit photos of the damage you reported. </p>
+      <p className="ta-left">Hi, [Name]</p>
+  <p className="ta-left"> In order to most accurately process your recent claim (#{props.claimNumber}), we ask that you submit photos of the damage you reported. </p>
       <div className="buttons">
         <UploadButton className="mb-2" updateImages={handleFiles}/>
         {images.length > 0 && <Link to='/success'><SubmitButton disabled/></Link>}

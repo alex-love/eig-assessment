@@ -3,6 +3,7 @@
   position: relative;
   .content-wrap {
     min-height: calc(85vh - 180px);
+    overflow: hidden;
   }
 }
 

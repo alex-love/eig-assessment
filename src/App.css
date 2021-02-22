@@ -28,6 +28,10 @@ main.wrapper {
   height: 50px;
 }
 
+.ta-left {
+  text-align: left;
+}
+
 .App-header {
   background-color: #fff;
   display: flex;
