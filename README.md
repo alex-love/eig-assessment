@@ -1,3 +1,14 @@
+
+# Overview
+I used React because I wanted to see what has changed since I last used it in a project (~2018). Mostly just wanted to get a feel for what hooks are like with functional components, since that seems to be more popular in React these days. 
+
+## UI Changes
+I pretty much stuck do the mockups with a couple small changes
+ - The submit photos button does not appear unless the user has photos ready to submit. I thought this made it a little less confusing. I als
+ - Didn't use the font is the mockups and just tried to just pick a similar system font.
+ - Formatted the upload-tips page a little bit
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

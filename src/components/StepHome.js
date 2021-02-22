@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import BaseStep from './BaseStep'
 import SubmitButton from './SubmitButton'
 import UploadButton from './UploadButton'
@@ -8,9 +8,6 @@ import { Link } from '@reach/router'
 
 export default function StepHome(props) {
   const [images, setImages] = useState([]);
-  useEffect(() => {
-    console.log('test', images)
-  }, [images])
   function handleFiles(files) {
     let tmp = []
     for (let i = 0; i < files.length; i++) {
@@ -18,7 +15,6 @@ export default function StepHome(props) {
       if (!file.type.startsWith('image/')){ continue } 
       const reader = new FileReader();
       reader.onload = (e) => {
-        console.log(e.target)
         tmp.push({image: e.target.result, key: i, name: truncate(file.name, 40)})
       }
       reader.readAsDataURL(file);

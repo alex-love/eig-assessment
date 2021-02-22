@@ -44,7 +44,7 @@ export default function UploadTips() {
           <p>You may want to take video of the damaged areas, as well.</p>
         </div>
         <div className="how-to">
-          <h3>How to Take Helful Pictures:</h3>
+          <h3>How to Take Helpful Pictures:</h3>
           <ul>
             <li>-- Use as much light as possible. Open curtains or blinds, or use a light source to allow for clarity</li>
             <li>-- Hold your camera as still as possible. If needed, steady it on a firm surface or use a tripod</li>

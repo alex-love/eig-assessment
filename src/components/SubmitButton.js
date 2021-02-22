@@ -6,6 +6,7 @@ export default function SubmitButton(props) {
     <div>
       <BaseButton 
         label="Submit"
+        color="blue"
       />
     </div>
   )

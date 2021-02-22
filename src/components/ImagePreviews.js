@@ -2,7 +2,6 @@ import React from 'react'
 import '../styles/ImagePreviews.scss';
 export default function ImagePreviews(props) {
   const {images} = props;
-  console.log(images);
   return (
     <div className="previews">
       {images.slice(0).reverse().map((data) => {
