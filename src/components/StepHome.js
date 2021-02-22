@@ -1,32 +1,41 @@
-import React, {useRef, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import BaseStep from './BaseStep'
 import SubmitButton from './SubmitButton'
 import UploadButton from './UploadButton'
-import ImageStore from '../lib/ImageStore'
 import ImagePreviews from './ImagePreviews'
 
 import { Link } from '@reach/router'
 
 export default function StepHome(props) {
-  const [images, updateImages] = useState([]);
+  const [images, setImages] = useState([]);
+  useEffect(() => {
+    console.log('test', images)
+  }, [images])
   function handleFiles(files) {
-    let fileImages = []
+    let tmp = []
     for (let i = 0; i < files.length; i++) {
       const file = files[i];
-      console.table(files);
       if (!file.type.startsWith('image/')){ continue } 
-      const img = document.createElement("img");
-      img.file = file;
       const reader = new FileReader();
-      reader.onload = (function(aImg) { return function(e) { aImg.src = e.target.result; }; })(img);
+      reader.onload = (e) => {
+        console.log(e.target)
+        // updateImages([...images, {image: e.target.result, key: i}])
+        // let newImg = {image: e.target.result, key: i}
+        tmp.push({image: e.target.result, key: i, name: file.name})
+        // addImage({image: e.target.result, key: i})
+      }
       reader.readAsDataURL(file);
-      fileImages.push(img);
-      const newImages = [...images, img]
-      updateImages(newImages);
+      reader.onloadend = (e) => {
+        setImages([...images, ...tmp]); 
+      }
     }
-    console.log(images);
-    // updateImages()
+    // updateImages(images => [...images, ...tmp])
+    //fix async thing?
+    setTimeout(() => {
+      // setImages([...images, ...tmp])
+    },150)
   }
+
   return (
     <div>
       <BaseStep>
@@ -34,7 +43,7 @@ export default function StepHome(props) {
       <div className="buttons">
         <UploadButton className="mb-2" updateImages={handleFiles}/>
         {images.length > 0 && <Link to='/success'><SubmitButton disabled/></Link>}
-        <ImagePreviews images={[1,2,3]} />
+        <ImagePreviews images={images} />
       </div>
       </BaseStep>
     </div>

@@ -1,7 +1,6 @@
 import React from 'react'
 import '../styles/UploadTips.scss'
 import {Link} from '@reach/router'
-import {UPLOAD_TIPS} from '../data/data'
 export default function UploadTips() {
   return (
     <div className="upload-tips">

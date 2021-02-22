@@ -2,6 +2,7 @@
   --link-color: #2F6BA6;
   --brand-green: #30BAA8;
   --button-blue: #3686EC;
+  --browser-phone-breakpoint: 600px;
 }
 
 .App {
@@ -19,13 +20,12 @@ button {
 main.wrapper {
   padding-left: 20px;
   padding-right: 20px;
+  min-height: 100%;
 }
 
 .footer {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 50px;
+  padding-top: 10px;
+  height: 50px;
 }
 
 .App-header {
@@ -62,11 +62,3 @@ mb-2 {
   margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

@@ -1,0 +1,23 @@
+.previews {
+  .preview-image {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 75px;
+      max-width: 80px;
+      border: 1px solid black;
+      margin: 2px;
+    }
+    &-name {
+      margin-left: 5px;
+    }
+    @media (max-width: 500px){
+      img {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
