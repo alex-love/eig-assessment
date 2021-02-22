@@ -6,8 +6,8 @@ export default function ImagePreviews(props) {
     <div className="previews">
       {images.slice(0).reverse().map((data) => {
         return (
-          <div className="preview-image">
-            <img key={data.key} src={data.image} alt=""/>
+          <div key={data.key} className="preview-image">
+            <img src={data.image} alt=""/>
             <div className="preview-image-name">{data.name}</div>
           </div>
         )

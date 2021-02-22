@@ -3,12 +3,14 @@
   --brand-green: #30BAA8;
   --button-blue: #3686EC;
   --browser-phone-breakpoint: 600px;
+  --brand-dark-blue: #2A2163;
 }
 
 .App {
   text-align: center;
   font-family: sans-serif;
   width: 100%;
+  position: relative;
 }
 button {
   font-family: sans-serif;
